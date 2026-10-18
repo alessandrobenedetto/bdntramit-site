@@ -1,0 +1,13 @@
+# Prevent project metadata/config from being served publicly as static assets
+README.md
+SITE-SETUP.md
+wrangler.jsonc
+wrangler.json
+wrangler.toml
+.gitignore
+.assetsignore
+.git/
+.github/
+node_modules/
+package.json
+package-lock.json
