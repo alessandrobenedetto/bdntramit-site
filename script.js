@@ -1,4 +1,5 @@
 (() => {
+  document.documentElement.classList.add("js");
   const menuButton = document.querySelector('.menu-toggle');
   const nav = document.querySelector('#site-nav');
   const year = document.querySelector('#year');
@@ -17,6 +18,7 @@
     menuButton.setAttribute('aria-label', isOpen ? 'Chiudi menu di navigazione' : 'Apri menu di navigazione');
   });
   nav.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
-  document.addEventListener('keydown', event => { if (event.key === 'Escape') closeMenu(); });
+  document.addEventListener('keydown', event => { if (event.key === 'Escape' && nav.classList.contains('is-open')) { closeMenu(); menuButton.focus(); } });
   window.addEventListener('resize', () => { if (window.innerWidth > 780) closeMenu(); });
 })();
+
